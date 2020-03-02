@@ -1,0 +1,267 @@
+/*SCSS*/
+/*body{
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+h1{
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 140px;
+    position: relative;
+
+    &:after,
+    &:before{
+        content: "Glitch Effect";
+        position: absolute;
+        top: 0;
+        color: #fff;
+        background-color: #000;
+        overflow: hidden;
+
+    }
+
+    &:after {
+        left: 2px;
+        text-shadow: -1px 0 #ff1b1b;
+        animation: glitch1 2s infinite ease;
+    }
+
+    &:before {
+        left: -2px;
+        text-shadow: 1px 0 #2124ff;
+        animation: glitch2 10s infinite ease;
+      }
+    }
+    
+    @keyframes glitch1 {
+      $steps: 25;
+      @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+          $top: random(100);
+          $bottom: random(101 - $top);
+          clip-path: inset(#{$top}% 0 #{$bottom}% 0);
+        }
+      }
+    }
+    
+    @keyframes glitch2 {
+      $steps: 25;
+      @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+          $top: random(100);
+          $bottom: random(101 - $top);
+          clip-path: inset(#{$top}% 0 #{$bottom}% 0);
+        }
+      }
+    }*/
+/*CSS*/
+    body {
+	 margin: 0;
+	 padding: 0;
+	 background-color: #000;
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 text-align: center;
+	 min-height: 100vh;
+}
+ h1 {
+	 color: #fff;
+	 font-family: 'Raleway', sans-serif;
+	 margin: 0;
+	 text-transform: uppercase;
+	 color: #fff;
+	 letter-spacing: 2px;
+	 font-size: 140px;
+	 position: relative;
+}
+ h1:after, h1:before {
+	 content: "Glitch Effect";
+	 position: absolute;
+	 top: 0;
+	 color: #fff;
+	 background-color: #000;
+	 overflow: hidden;
+}
+ h1:after {
+	 left: 2px;
+	 text-shadow: -1px 0 #ff1b1b;
+	 animation: glitch1 2s infinite ease;
+}
+ h1:before {
+	 left: -2px;
+	 text-shadow: 1px 0 #2124ff;
+	 animation: glitch2 10s infinite ease;
+}
+ @keyframes glitch1 {
+	 0% {
+		 clip-path: inset(14% 0 52% 0);
+	}
+	 4% {
+		 clip-path: inset(10% 0 72% 0);
+	}
+	 8% {
+		 clip-path: inset(46% 0 47% 0);
+	}
+	 12% {
+		 clip-path: inset(96% 0 4% 0);
+	}
+	 16% {
+		 clip-path: inset(39% 0 6% 0);
+	}
+	 20% {
+		 clip-path: inset(57% 0 13% 0);
+	}
+	 24% {
+		 clip-path: inset(66% 0 1% 0);
+	}
+	 28% {
+		 clip-path: inset(50% 0 41% 0);
+	}
+	 32% {
+		 clip-path: inset(99% 0 1% 0);
+	}
+	 36% {
+		 clip-path: inset(87% 0 14% 0);
+	}
+	 40% {
+		 clip-path: inset(16% 0 45% 0);
+	}
+	 44% {
+		 clip-path: inset(23% 0 15% 0);
+	}
+	 48% {
+		 clip-path: inset(52% 0 25% 0);
+	}
+	 52% {
+		 clip-path: inset(57% 0 28% 0);
+	}
+	 56% {
+		 clip-path: inset(80% 0 7% 0);
+	}
+	 60% {
+		 clip-path: inset(87% 0 11% 0);
+	}
+	 64% {
+		 clip-path: inset(14% 0 52% 0);
+	}
+	 68% {
+		 clip-path: inset(75% 0 15% 0);
+	}
+	 72% {
+		 clip-path: inset(19% 0 41% 0);
+	}
+	 76% {
+		 clip-path: inset(71% 0 24% 0);
+	}
+	 80% {
+		 clip-path: inset(9% 0 75% 0);
+	}
+	 84% {
+		 clip-path: inset(43% 0 32% 0);
+	}
+	 88% {
+		 clip-path: inset(69% 0 21% 0);
+	}
+	 92% {
+		 clip-path: inset(52% 0 24% 0);
+	}
+	 96% {
+		 clip-path: inset(49% 0 19% 0);
+	}
+	 100% {
+		 clip-path: inset(54% 0 5% 0);
+	}
+}
+ @keyframes glitch2 {
+	 0% {
+		 clip-path: inset(17% 0 51% 0);
+	}
+	 4% {
+		 clip-path: inset(52% 0 4% 0);
+	}
+	 8% {
+		 clip-path: inset(68% 0 3% 0);
+	}
+	 12% {
+		 clip-path: inset(31% 0 45% 0);
+	}
+	 16% {
+		 clip-path: inset(2% 0 21% 0);
+	}
+	 20% {
+		 clip-path: inset(12% 0 12% 0);
+	}
+	 24% {
+		 clip-path: inset(21% 0 12% 0);
+	}
+	 28% {
+		 clip-path: inset(89% 0 11% 0);
+	}
+	 32% {
+		 clip-path: inset(6% 0 46% 0);
+	}
+	 36% {
+		 clip-path: inset(64% 0 29% 0);
+	}
+	 40% {
+		 clip-path: inset(11% 0 74% 0);
+	}
+	 44% {
+		 clip-path: inset(90% 0 3% 0);
+	}
+	 48% {
+		 clip-path: inset(72% 0 17% 0);
+	}
+	 52% {
+		 clip-path: inset(32% 0 16% 0);
+	}
+	 56% {
+		 clip-path: inset(90% 0 7% 0);
+	}
+	 60% {
+		 clip-path: inset(28% 0 65% 0);
+	}
+	 64% {
+		 clip-path: inset(30% 0 57% 0);
+	}
+	 68% {
+		 clip-path: inset(56% 0 13% 0);
+	}
+	 72% {
+		 clip-path: inset(85% 0 16% 0);
+	}
+	 76% {
+		 clip-path: inset(32% 0 28% 0);
+	}
+	 80% {
+		 clip-path: inset(23% 0 76% 0);
+	}
+	 84% {
+		 clip-path: inset(83% 0 2% 0);
+	}
+	 88% {
+		 clip-path: inset(68% 0 28% 0);
+	}
+	 92% {
+		 clip-path: inset(19% 0 64% 0);
+	}
+	 96% {
+		 clip-path: inset(79% 0 22% 0);
+	}
+	 100% {
+		 clip-path: inset(3% 0 38% 0);
+	}
+}
+ 
