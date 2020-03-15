@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab create</title>
+    <link rel="stylesheet" type="text/css" href="Tab_create.css">
+    <style type="text/css"> 
+        .Nav { 
+            display: flex;
+            font-size: 120%; 
+            font-family: Verdana, Arial, Helvetica, sans-serif; 
+            margin: 10px;
+            top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p>
+            <a href="html ideas start.html" class="Nav">Назад</a>
+        </p>
+    </section>
+    <section class="Main">
+        <div class="container">
+            <div class="icon">
+                <div class="iconBx" data-id="content1">
+                    <img src="tab_create_1.png">
+                </div>
+                <div class="iconBx" data-id="content2">
+                    <img src="tab_create_2.png">
+                </div>
+                <div class="iconBx" data-id="content3">
+                    <img src="tab_create_3.png">
+                </div>
+                <div class="iconBx" data-id="content4">
+                    <img src="tab_create_4.png">
+                </div>
+            </div>
+            <div class="content">
+                <div class="contentBx" id="content1">
+                    <div>
+                        <div class="text">
+                            <h2>Google text</h2>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque provident voluptates quis culpa sint quae dignissimos. Quia quibusdam numquam assumenda molestias illum odit iusto ullam, labore doloremque optio aut ut!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contentBx" id="content2">
+                    <div>
+                        <div class="text">
+                            <h2>Facebook text</h2>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque provident voluptates quis culpa sint quae dignissimos. Quia quibusdam numquam assumenda molestias illum odit iusto ullam, labore doloremque optio aut ut!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contentBx" id="content3">
+                    <div>
+                        <div class="text">
+                            <h2>Twitter text</h2>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque provident voluptates quis culpa sint quae dignissimos. Quia quibusdam numquam assumenda molestias illum odit iusto ullam, labore doloremque optio aut ut!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contentBx" id="content4">
+                    <div>
+                        <div class="text">
+                            <h2>Yahoo text</h2>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque provident voluptates quis culpa sint quae dignissimos. Quia quibusdam numquam assumenda molestias illum odit iusto ullam, labore doloremque optio aut ut!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        let iconBx = document.querySelectorAll(".iconBx");
+        let contentBx = document.querySelectorAll(".contentBx");
+
+        for (let i=0; i<iconBx.length; i++){
+            iconBx[i].addEventListener('mouseover', function(){
+                for (let i=0; i<contentBx.length; i++){
+                    contentBx[i].className = 'contentBx';
+                }
+                document.getElementById(this.dataset.id).className = 'contentBx active';
+                
+                for (let i=0; i<iconBx.length; i++){
+                    iconBx[i].className = 'iconBx';
+                }
+                this.className = 'iconBx active';
+            })
+        }
+    </script>
+</body>
+</html>
