@@ -14,5 +14,3 @@ function outNum(num, elem) {
     },
     t);
 }
-
-outNum(1000, "out-1");
