@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Video Background Fadeout On Scroll</title>
+    <link rel="stylesheet" type="text/css" href="Video_fadeout.css">
+    <style type="text/css"> 
+        .Nav {
+            position: absolute; 
+            display: flex;
+            font-size: 120%; 
+            font-family: Verdana, Arial, Helvetica, sans-serif; 
+            background: #fff;
+            padding: 20px 20px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p>
+            <a href="html ideas start.html" class="Nav">Назад</a>
+        </p>
+    </section>
+    <section class="Main">
+        <section>
+            <video src="Video_fadeout.mp4" autoplay="" muted="" loop=""></video>
+        </section>
+        <section>
+            <div class="content">
+                <h2>Fadeout Video Background On Scroll</h2>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et dolores reiciendis, neque iste temporibus aut, odio animi voluptatum in distinctio beatae fugit nostrum ducimus quasi? 
+                    Eligendi quo unde exercitationem quibusdam. Lorem ipsum dolor, 
+                    sit amet consectetur adipisicing elit. Assumenda asperiores ab 
+                    nulla blanditiis iure explicabo! Velit reiciendis numquam eum 
+                    aut, quasi consequatur nemo fuga culpa, eligendi incidunt id, 
+                    labore maxime. Lorem, ipsum dolor sit amet consectetur 
+                    adipisicing elit. Fuga voluptas minus accusamus exercitationem 
+                    obcaecati ut animi nobis maxime sapiente iste! Esse ex est ad 
+                    optio dolore repellat beatae numquam eveniet. Lorem ipsum dolor, 
+                    sit amet consectetur adipisicing elit. Nesciunt magni labore 
+                    necessitatibus quis quae voluptatem et, vitae voluptates debitis 
+                    quaerat ad quo nihil, harum accusamus, itaque ratione tempore 
+                    dolores minus. Lorem ipsum dolor sit amet consectetur adipisicing 
+                    elit. Amet error minima deleniti fuga doloribus commodi alias 
+                    optio nesciunt nostrum, asperiores odio, recusandae corrupti 
+                    quidem illo. Neque quidem mollitia incidunt dolores. Lorem ipsum 
+                    dolor, sit amet consectetur adipisicing elit. Ipsa tempore at 
+                    tempora porro, repellat sint reiciendis, incidunt consequatur, 
+                    repellendus omnis consequuntur nisi iste iure inventore esse 
+                    soluta. Odio, dolorem deserunt. Lorem ipsum dolor sit amet, 
+                    consectetur adipisicing elit. <br> Itaque beatae impedit dolorem 
+                    voluptas accusamus architecto adipisci ea sequi modi quidem 
+                    vitae eos consectetur perferendis, in quos deserunt veritatis 
+                    debitis inventore. Lorem ipsum dolor, sit amet consectetur 
+                    adipisicing elit. Illum soluta eveniet nobis doloremque suscipit 
+                    iste unde commodi id ipsum! Deleniti pariatur in sed, nihil 
+                    beatae quo tempore ab odio assumenda. Lorem, ipsum dolor sit 
+                    amet consectetur adipisicing elit. Dignissimos voluptate veniam 
+                    reprehenderit, aliquam, deserunt soluta voluptatem quia fuga 
+                    consequatur odit nihil cumque, hic at optio doloribus culpa 
+                    molestiae iste qui. Lorem ipsum dolor sit, amet consectetur 
+                    adipisicing elit. Dicta consectetur animi molestias adipisci? 
+                    Nesciunt tempora facere tenetur recusandae, perspiciatis, error 
+                    porro mollitia ipsum maiores fuga dolor beatae! Vitae, deleniti 
+                    blanditiis!
+                </p>
+            </div>
+        </section>
+    </section>
+    <script type="text/javascript">
+        let video = document.querySelector('video');
+        window.addEventListener('scroll', function(){
+            let value = 1 + window.scrollY / -600;
+            video.style.opacity = value;
+        })
+    </script>
+</body>
+</html>

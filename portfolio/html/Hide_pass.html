@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show / hide password</title>
+    <link rel="stylesheet" type= "text/css" href="hide.css">
+    <style type="text/css"> 
+        a { 
+            display: flex;
+            font-size: 120%; 
+            font-family: Verdana, Arial, Helvetica, sans-serif; 
+            color: #000000;
+            margin: 10px;
+            top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p>
+            <a href="html ideas start.html">Назад</a>
+        </p>
+    </section>
+    <br>
+     <section class="Main">
+         <div class="inputBox">
+            <input type="password" name="" placeholder="Enter Password" id="password">
+            <div id="toggle" onclick="showHide();"></div>
+            <script type="text/javascript">
+                const password = document.getElementById("password");
+                const toggle = document.getElementById("toggle");
+                function showHide(){
+                    if (password.type === "password"){
+                        password.setAttribute("type", "text");
+                        toggle.classList.add("Hide")
+                    }
+                    else {
+                        password.setAttribute("type", "password");
+                        toggle.classList.remove("Hide")
+                    }
+                }
+            </script>
+         </div>
+     </section>
+</body>
+</html>
