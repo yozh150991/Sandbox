@@ -23,14 +23,26 @@
         </p>
     </section>
     <section class="Main">
-        <ul>
-            <li data-text="Home"><a href="#">Home</a></li>
-            <li data-text="About"><a href="#">About</a></li>
-            <li data-text="Services"><a href="#">Services</a></li>
-            <li data-text="Portfolio"><a href="#">Portfolio</a></li>
-            <li data-text="Team"><a href="#">Team</a></li>
-            <li data-text="Contact"><a href="#">Contact</a></li>
-        </ul>
+        <div id="curtain">
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul>
+                <li data-text="Home"><a href="#">Home</a></li>
+                <li data-text="About"><a href="#">About</a></li>
+                <li data-text="Services"><a href="#">Services</a></li>
+                <li data-text="Portfolio"><a href="#">Portfolio</a></li>
+                <li data-text="Team"><a href="#">Team</a></li>
+                <li data-text="Contact"><a href="#">Contact</a></li>
+            </ul>
+            <div class="toggle" onclick="toggle()"></div>
+        </div>
     </section>
+    <script type="text/javascript">
+        function toggle(){
+            let curtain = document.getElementById('curtain');
+            curtain.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
