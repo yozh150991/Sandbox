@@ -1,0 +1,103 @@
+/*SCSS*/
+/*.Main{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000;
+}
+.Main .shadow{
+    position: relative;
+    width: 500px;
+    height: 350px;
+    background: linear-gradient(#000, #262626);
+
+    img{
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    &:before,
+    &:after{
+        content: '';
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        bottom: -2px;
+        left: -2px;
+        background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
+        background-size: 500%;
+        z-index: -1;
+        animation: animate 30s ease infinite;
+    }
+
+    &:after{
+        filter: blur(25px);
+    }
+}
+
+@keyframes animate{
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 300% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}*/
+/*CSS*/
+.Main {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000;
+}
+.Main .shadow {
+    position: relative;
+    width: 500px;
+    height: 350px;
+    background: linear-gradient(#000, #262626);
+}
+.Main .shadow img {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 10px;
+    bottom: 10px;
+}
+.Main .shadow:before, .Main .shadow:after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    background: linear-gradient(45deg, #fb0094, #00f, #0f0, #ff0, #f00, #fb0094, #00f, #0f0, #ff0, #f00);
+    background-size: 500%;
+    z-index: -1;
+    animation: animate 30s ease infinite;
+}
+.Main .shadow:after {
+    filter: blur(25px);
+}
+@keyframes animate {
+    0% {
+        background-position: 0 0;
+   }
+    50% {
+        background-position: 300% 0;
+   }
+    100% {
+        background-position: 0 0;
+   }
+}
