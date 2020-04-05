@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just For Fun 2</title>
+    <link rel="stylesheet" type="text/css" href="Just_for_fun2.css">
+    <style type="text/css"> 
+        .Nav {
+            position: absolute; 
+            display: flex;
+            right: 20px;
+            font-size: 120%; 
+            font-family: Verdana, Arial, Helvetica, sans-serif; 
+            background: #fff;
+            padding: 20px 20px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p>
+            <a href="html ideas start.html" class="Nav">Назад</a>
+        </p>
+    </section>
+    <section class="Main">
+        <div class="container"></div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        for(var i =1; i<= 2500; i++){
+		  $('.container').append('<div class="box"></div>')
+		}
+    </script>
+</body>
+</html>

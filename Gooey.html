@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gooey</title>
+    <link rel="stylesheet" type="text/css" href="Gooey.css">
+    <style type="text/css"> 
+        .Nav {
+            position: absolute; 
+            display: flex;
+            right: 20px;
+            font-size: 120%; 
+            font-family: Verdana, Arial, Helvetica, sans-serif; 
+            background: #fff;
+            padding: 20px 20px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p>
+            <a href="html ideas start.html" class="Nav">Назад</a>
+        </p>
+    </section>
+    <section class="Main">
+        <div id="container"></div>
+    </section>
+    <script type="text/javascript">
+		let container = document.getElementById('container');
+		let count = 50;
+		for (let i = 0; i < count; i++){
+			let glitchBox = document.createElement('div')
+				glitchBox.className = 'box';
+				container.appendChild(glitchBox);
+		}
+		setInterval(function(){
+			let glitch = document.getElementsByClassName('box');
+			for (let i = 0; i < glitch.length; i++){
+				glitch[i].style.left = Math.floor(Math.random()*85) + 'vw';
+				glitch[i].style.top = Math.floor(Math.random()*75) + 'vh';
+			}
+		},5000)
+	</script>
+</body>
+</html>

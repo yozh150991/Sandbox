@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.5D Parallax Effects on Mousemove</title>
+    <link rel="stylesheet" type="text/css" href="Parallax_mousemove.css">
+    <style type="text/css"> 
+        .Nav {
+            position: absolute; 
+            display: flex;
+            right: 20px;
+            font-size: 120%; 
+            font-family: Verdana, Arial, Helvetica, sans-serif; 
+            background: #fff;
+            padding: 20px 20px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p>
+            <a href="html ideas start.html" class="Nav">Назад</a>
+        </p>
+    </section>
+    <section class="Main">
+        <div id="bg"></div>
+        <h2>2.5D Parallax Effects</h2>
+        <img src="Parallax_mousemove_img.png" class="girl">
+    </section>
+    <script type="text/javascript">
+        var position = document.documentElement;
+        position.addEventListener("mousemove", e => {
+            position.style.setProperty("--x", e.clientX + "px");
+        })
+    </script>
+</body>
+</html>
