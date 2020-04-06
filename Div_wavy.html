@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wavy Div</title>
+    <link rel="stylesheet" type="text/css" href="Div_wavy.css">
+    <style type="text/css"> 
+        .Nav {
+            position: absolute; 
+            display: flex;
+            right: 20px;
+            font-size: 120%; 
+            font-family: Verdana, Arial, Helvetica, sans-serif; 
+            background: #fff;
+            padding: 20px 20px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p>
+            <a href="html ideas start.html" class="Nav">Назад</a>
+        </p>
+    </section>
+    <section class="Main">
+        <div class="container">
+            <div class="box">
+                <div class="content">
+                    <h2>Water Wave Div</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos architecto voluptatibus rem, quisquam voluptas asperiores illo recusandae enim laborum? Ipsam corporis quia ab distinctio obcaecati iure quasi aspernatur, fugiat velit!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <svg>
+        <filter id="wavy">
+            <feTurbulence x="0" y="0" baseFrequency="0.02" numOctaves="5" seed="2">
+                <animate attributeName="baseFrequency" dur="60s" values="0.02; 0.05; 0.02" repeatCount="indefinite" />
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" scale="30" />
+        </filter>
+    </svg>
+</body>
+</html>
