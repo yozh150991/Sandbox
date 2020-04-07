@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clip-path Transform Effects on Scroll</title>
+    <link rel="stylesheet" type="text/css" href="Clip-path_transform1.css">
+    <style type="text/css"> 
+        .Nav {
+            position: absolute; 
+            display: flex;
+            left: 20px;
+            font-size: 120%; 
+            font-family: Verdana, Arial, Helvetica, sans-serif; 
+            background: #fff;
+            padding: 20px 20px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p>
+            <a href="html ideas start.html" class="Nav">Назад</a>
+        </p>
+    </section>
+    <section class="Main">
+        <h2 class="title">Scroll To See Magic</h2>
+        <section class="section"></section>
+        <div class="container">
+            <h2>Look carefull</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur numquam molestias vitae tempora, distinctio animi odit quis repellat aliquid provident excepturi perferendis id deleniti. Omnis vitae sequi incidunt cumque iste! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, magni consectetur officia eaque officiis quia tempore facilis earum illo adipisci deleniti quaerat architecto mollitia accusamus magnam sapiente aut ipsum voluptatem. <br><br> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error magni amet corrupti totam consequuntur quibusdam cumque est, excepturi, veniam eligendi repudiandae beatae asperiores! Consectetur dolore libero maiores deleniti cupiditate corporis! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam, vitae ad! Pariatur quis dicta commodi delectus ab facilis enim voluptate deserunt obcaecati a rerum velit dignissimos optio dolores, ipsam sed! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, recusandae excepturi, necessitatibus quos distinctio qui mollitia ratione quo voluptatum vero libero? Eligendi, harum. Neque quia vitae tenetur repellat, nisi quibusdam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat voluptatem distinctio in maxime numquam culpa eum excepturi rerum itaque, incidunt consequatur quia, perferendis quidem mollitia? Quam ipsum expedita magnam necessitatibus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus rem error commodi eligendi id autem libero ea iure, perspiciatis asperiores incidunt quibusdam ipsam nemo quam assumenda saepe explicabo quo porro. <br><br> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum consequuntur eius aperiam autem necessitatibus, perferendis corrupti beatae iure et ullam modi quia at consequatur nisi possimus voluptatibus? Quibusdam, placeat maiores. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, illum aperiam! Labore molestiae a dolore aperiam magni praesentium illum fugit molestias hic doloremque voluptatum facilis architecto, debitis sed numquam? Eum. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo, corrupti debitis magnam facilis a similique nobis corporis suscipit, aut dicta sequi eaque tenetur cum? Ad illo consectetur expedita? In, perspiciatis. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia ullam repellat quaerat quis consequatur nulla neque blanditiis, quo, debitis temporibus doloribus facilis perspiciatis odio. Ea voluptates alias eaque accusamus animi. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat veniam temporibus est quidem quia illo non, sed corporis rerum, nihil voluptate nobis! Quos iste vel officia nisi, deserunt vitae numquam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt libero nam harum ratione culpa quis earum reiciendis perferendis temporibus? Quisquam soluta eum libero magni nisi, vero pariatur nemo iure praesentium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum blanditiis reprehenderit placeat quo quia commodi doloremque. Quis, tempore dolore! Voluptas dolorum deserunt et voluptatibus consequuntur aut aspernatur nemo velit numquam! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, minus mollitia, incidunt voluptatem at, eius sunt perferendis numquam distinctio cum veritatis pariatur porro culpa. Cumque quidem laudantium molestiae! Nemo, minima! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid sapiente impedit provident, quibusdam pariatur saepe quia repellendus accusantium quisquam vitae eum? Tempore soluta impedit, tenetur ipsum voluptatem molestiae aperiam earum. <br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, magnam cupiditate cum nulla sapiente vitae tenetur porro aut fugiat quis obcaecati commodi fugit ab atque voluptatem quaerat optio velit sequi? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis necessitatibus eaque itaque magni, modi expedita, voluptates odit sint iste dolor harum nihil ipsam aliquam animi beatae dolore ea laudantium voluptas! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem nihil recusandae facere aliquam enim non itaque vitae ut, ullam natus velit. Vitae officiis autem voluptatum laudantium saepe est numquam corrupti! Lorem ipsum dolor sit amet consectetur adipisicing elit. At ut obcaecati laborum ipsam, est minus possimus aut voluptates, praesentium voluptas vero totam dolores iusto mollitia doloribus laudantium expedita quas! Tenetur. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore id vero quis ipsam dolorum ullam porro soluta! Atque ipsam cum libero voluptate, ratione provident ipsa vero suscipit officiis aspernatur consectetur. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus necessitatibus a aliquam enim atque deleniti perferendis quod velit, fugiat eos, architecto doloremque minima, reprehenderit corporis minus nostrum quam! Ratione, consequatur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse incidunt eaque ad dolorum distinctio sapiente perferendis qui maiores aut quibusdam saepe beatae, et illum. Quibusdam nulla iusto recusandae omnis dicta.</p>
+
+        </div>
+    </section>
+    <script type="text/javascript">
+        let section = document.querySelector('.section')
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            section.style.clipPath = "circle("+ value +"px at center";
+        })
+    </script>
+</body>
+</html>
