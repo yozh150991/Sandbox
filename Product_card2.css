@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+/*SCSS*/
+/**
+{
+    margin: 0;
+    padding: 0;
+    font-family: consolas;
+}
+.Main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(#ff0000, #000);
+}
+figure{
+    width: 660px;
+    height: 360px;
+    box-sizing: border-box;
+    padding: 3em;
+    position: relative;
+
+    &:before,
+    &:after{
+        content: '';
+        width: 0;
+        height: 0;
+        box-sizing: inherit;
+        border: 4px solid transparent;
+        position: absolute;
+    }
+
+    &:before{
+        top: 0;
+        left: 0;
+    }
+
+    &:after{
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+    }
+
+    &:hover{
+        &:before,
+        &:after{
+            width: 100%;
+            height: 100%;
+        }
+
+        &:before{
+            border-top-color: #ff0000;
+            border-right-color: #ff0000;
+            transition: width 0.25s ease,
+                        height 0.25s ease 0.25s;
+        }
+
+        &:after{
+            border-top-color: #f07e7e;
+            border-right-color: #f07e7e;
+            transition: width 0.25s ease 0.5s,
+                        height 0.25s ease 0.75s,
+                        border-color 0s ease 0.5s;
+        }
+
+        h2{
+            left: 20%;
+        }
+
+        button{
+            left: 55%;
+        }
+    }
+    img{
+        position: absolute;
+        width: 460px;
+        top: 45%;
+        left: 22%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+    figcaption{
+        margin-top: 50px;
+        position: relative;
+        overflow: hidden;
+
+        h2{
+            font-family: 'Mansalva', cursive;
+            font-size: 68px;
+            color: #0c0c0c;
+            text-shadow: 1px 1px 5px #ff0000;
+            text-align: center;
+            margin: 0 0 50px;
+            position: relative;
+            top: 10%;
+            left: -50%;
+            transition: 1s ease;
+
+            span{
+                display: block;
+                font-size: 14px;
+            }
+        }
+
+        button{
+            cursor: pointer;
+            background-color: transparent;
+            height: 45px;
+            width: 140px;
+            border: 2px solid #fff;
+            color: #fff;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 35px;
+            position: relative;
+            top: 0;
+            left: 0;
+            transition: 1s ease;
+        }
+    }
+}*/
+/*CSS*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: consolas;
+}
+.Main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(#f00, #000);
+}
+figure {
+    width: 660px;
+    height: 360px;
+    box-sizing: border-box;
+    padding: 3em;
+    position: relative;
+}
+figure:before, figure:after {
+    content: '';
+    width: 0;
+    height: 0;
+    box-sizing: inherit;
+    border: 4px solid transparent;
+    position: absolute;
+}
+figure:before {
+    top: 0;
+    left: 0;
+}
+figure:after {
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+figure:hover:before, figure:hover:after {
+    width: 100%;
+    height: 100%;
+}
+figure:hover:before {
+    border-top-color: #f00;
+    border-right-color: #f00;
+    transition: width 0.25s ease, height 0.25s ease 0.25s;
+}
+figure:hover:after {
+    border-top-color: #f07e7e;
+    border-right-color: #f07e7e;
+    transition: width 0.25s ease 0.5s, height 0.25s ease 0.75s, border-color 0s ease 0.5s;
+}
+figure:hover h2 {
+    left: 20%;
+}
+figure:hover button {
+    left: 55%;
+}
+figure img {
+    position: absolute;
+    width: 460px;
+    top: 45%;
+    left: 22%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+figure figcaption {
+    margin-top: 50px;
+    position: relative;
+    overflow: hidden;
+}
+figure figcaption h2 {
+    font-family: 'Mansalva', cursive;
+    font-size: 68px;
+    color: #0c0c0c;
+    text-shadow: 1px 1px 5px #f00;
+    text-align: center;
+    margin: 0 0 50px;
+    position: relative;
+    top: 10%;
+    left: -50%;
+    transition: 1s ease;
+}
+figure figcaption h2 span {
+    display: block;
+    font-size: 14px;
+}
+figure figcaption button {
+    cursor: pointer;
+    background-color: transparent;
+    height: 45px;
+    width: 140px;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 35px;
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: 1s ease;
+}
