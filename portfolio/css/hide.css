@@ -44,7 +44,7 @@
     transform: translateY(-50%);
     width: 30px;
     height: 30px;
-    background: url(show.png);
+    background: url(/portfolio/add/show.png);
     background-size: cover;
     cursor: pointer;
 }

@@ -62,7 +62,7 @@
     right: 20px;
     width: 70px;
     height: 70px;
-    background: url(Menu_hover_menu.png);
+    background: url(/portfolio/add/Menu_hover_menu.png);
     background-repeat: no-repeat;
     background-position: 5px;
     z-index: 1000;
@@ -70,7 +70,7 @@
     transition: 0.5s;
 }
 .Main #curtain.active .toggle{
-    background: url(Menu_hover_close.png);
+    background: url(/portfolio/add/Menu_hover_close.png);
     background-repeat: no-repeat;
     background-position: 5px;
 }
