@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click And Hold</title>
+    <link rel="stylesheet" type="text/css" href="Click_hold.css">
+    <style type="text/css"> 
+        .Nav {
+            position: absolute; 
+            display: flex;
+            right: 20px;
+            font-size: 120%; 
+            font-family: Verdana, Arial, Helvetica, sans-serif; 
+            background: #fff;
+            padding: 20px 20px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p>
+            <a href="html ideas start.html" class="Nav">Назад</a>
+        </p>
+    </section>
+    <section class="Main">
+        <section>
+            <h2>Click And Hold</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam et quam eos id culpa delectus consequatur veniam voluptatum atque quibusdam ipsam, error eum dolore quaerat vero facere eveniet magnam officia.\Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa adipisci rem perferendis alias veniam ab amet reprehenderit, quas quaerat aspernatur accusantium hic sunt non fuga, reiciendis, eaque officia ratione odit?<br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, quia optio consectetur nulla rerum illo ratione exercitationem ex dolor? Vero voluptates eveniet fuga similique, temporibus quaerat libero facere sequi nesciunt? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam, debitis libero consequatur ut hic porro repellat quas illum rem odio, dolores provident maxime expedita delectus vero obcaecati laboriosam distinctio alias. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam exercitationem ipsa pariatur repudiandae vel. Totam doloribus ducimus recusandae excepturi nihil ratione neque voluptas amet eius, id distinctio voluptates? Voluptatum, quaerat?</p>
+        </section>
+        <div id="cursor">
+        </div>
+    </section>
+    <script type="text/javascript">
+        let cursor = document.getElementById('cursor');
+        window.onmousemove = function(e){
+            let x = e.clientX,
+                y = e.clientY;
+            cursor.style.left = x + 'px';
+            cursor.style.top = y + 'px';
+        }
+    </script>
+</body>
+</html>
