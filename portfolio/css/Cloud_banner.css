@@ -10,7 +10,7 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url(Cloud_banner_bg.jpg);
+    background: url(/portfolio/add/Cloud_banner_bg.jpg);
     background-size: cover;
     background-position: bottom;
 }

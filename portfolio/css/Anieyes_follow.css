@@ -12,7 +12,7 @@
     align-items: center;
     min-height: 100vh;
     background: #251801;
-    cursor: url('Anieyes_follow.png'), pointer;
+    cursor: url('/portfolio/add/Anieyes_follow.png'), pointer;
 }
 .Main .container{
     position: relative;
