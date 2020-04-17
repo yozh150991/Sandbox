@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.banner{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url(/portfolio/add/Position_sticky_0.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.Add:nth-child(2n+1){
+    position: relative;
+    height: auto;
+    background: #fafafa;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.Add:nth-child(2n+2){
+    position: relative;
+    height: auto;
+    background: #fafafa;
+    display: flex;
+}
+.Add .imgBx{
+    position: sticky;
+    top: 0;
+    min-width: 50%;
+    height: 100vh;
+}
+.Add .imgBx img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 600px;
+}
+.Add:nth-child(2n+1) .content{
+    padding: 100px 0 100px 100px;
+    text-align: right;
+}
+.Add:nth-child(2n+2) .content{
+    padding: 100px 100px 100px 0;
+    text-align: left;
+}
+.Add .content h2{
+    margin: 0 0 20px;
+    font-size: 60px;
+}
+.Add .content p{
+    color: #777;
+    font-size: 18px;
+}

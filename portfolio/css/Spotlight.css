@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+}
+.Main{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url(/portfolio/add/Spotlight_back.jpg);
+    background-size: cover;
+}
+.Main .focus{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}

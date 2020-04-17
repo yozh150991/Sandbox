@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax scrolling effect</title>
+    <link rel="stylesheet" type="text/css" href="/portfolio/css/Parallax_scroll.css">
+    <style type="text/css"> 
+        .Nav {
+            position: absolute; 
+            display: flex;
+            top: 90px;
+            left: 20px;
+            font-size: 120%; 
+            font-family: Verdana, Arial, Helvetica, sans-serif; 
+            background: #fff;
+            padding: 20px 20px;
+            z-index: 10;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p>
+            <a href="/portfolio/index.html" class="Nav">Назад</a>
+        </p>
+    </section>
+    <section class="Main">
+        <section>
+            <img src="/portfolio/add/Parallax_scroll_1.jpg" id="bg">
+            <img src="/portfolio/add/Parallax_scroll_2.png" id="moon">
+            <img src="/portfolio/add/Parallax_scroll_3.png" id="mountain">
+            <img src="/portfolio/add/Parallax_scroll_4.png" id="road">
+            <h2 id="text">Moon Light</h2>
+        </section>
+    </section>
+    <script type="text/javascript">
+        let bg = document.getElementById('bg');
+        let moon = document.getElementById('moon');
+        let mountain = document.getElementById('mountain');
+        let road = document.getElementById('road');
+        let text = document.getElementById('text');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+
+            bg.style.top = value *0.5 + 'px';
+            moon.style.left = -value *0.5 + 'px';
+            mountain.style.top = -value *0.15 + 'px';
+            road.style.top = value *0.15 + 'px';
+            text.style.top = value *1+ 'px';
+        })
+    </script>
+</body>
+</html>
