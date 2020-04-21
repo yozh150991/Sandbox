@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Tilt Effect</title>
+    <link rel="stylesheet" type="text/css" href="/portfolio/css/Parallax_tilt.css">
+    <style type="text/css"> 
+        .Nav {
+            position: absolute; 
+            display: flex;
+            right: 20px;
+            font-size: 120%; 
+            font-family: Verdana, Arial, Helvetica, sans-serif; 
+            background: #fff;
+            padding: 20px 20px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p>
+            <a href="/portfolio/index.html" class="Nav">Назад</a>
+        </p>
+    </section>
+    <section class="Main">
+        <div class="container">
+            <div class="box">
+                <div class="imgBx">
+                    <img src="/portfolio//add/Parallax_tilt_1.jpg" alt="">
+                </div>
+                <div class="contentBx">
+                    <h2>Tilt Box Hover</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In exercitationem asperiores repellendus labore soluta officia eveniet dolor atque.</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="/portfolio//add/Parallax_tilt_2.jpg" alt="">
+                </div>
+                <div class="contentBx">
+                    <h2>Tilt Box Hover</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In exercitationem asperiores repellendus labore soluta officia eveniet dolor atque.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="/portfolio/js/Parallax_tilt_vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelectorAll(".box"), {
+            max: 25,
+            speed: 400
+        });
+    </script>
+</body>
+</html>
