@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split Banner</title>
+    <link rel="stylesheet" type="text/css" href="/portfolio/css/Banner_split.css">
+    <style type="text/css"> 
+        .Nav {
+            position: absolute; 
+            display: flex;
+            right: 20px;
+            font-size: 120%; 
+            font-family: Verdana, Arial, Helvetica, sans-serif; 
+            background: #fff;
+            padding: 20px 20px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p>
+            <a href="/portfolio/index.html" class="Nav">Назад</a>
+        </p>
+    </section>
+    <section class="Main">
+        <section>
+            <div class="side" id="side1"></div>
+            <div class="side" id="side2"></div>
+        </section>
+        <div class="contentBx">
+            <h2>Split Banner On Page Scroll</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto praesentium vitae repellendus fugit, sequi voluptatem. Eius temporibus esse molestias. Sit aliquid eius, officiis facere omnis corrupti deleniti vel vitae commodi? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos, laudantium laborum. Modi ipsum maxime doloribus quidem ad, aliquam quo repellendus alias dicta hic illum consequuntur quae minus magni quasi sapiente. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus minus mollitia voluptatem sequi provident fugit autem modi quam molestiae voluptate dolores pariatur doloribus vero, quo, nostrum assumenda veritatis harum facilis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, consequatur ipsum. Modi, esse! Sunt sapiente odio quisquam deleniti minima iusto voluptates voluptatum rem excepturi reiciendis impedit fugit, velit enim earum. <br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat tempora repudiandae dolorem sunt odio eos, ullam voluptatem ipsum laboriosam sit corrupti rerum et ducimus dicta aliquam numquam. Natus, deserunt odit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi hic mollitia porro culpa unde, facere, quos dolor sapiente soluta ipsa impedit laudantium quidem nostrum vero beatae. Officia inventore blanditiis quasi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, velit corrupti, illum inventore consectetur officia dolores quasi recusandae saepe qui possimus iure sit aliquam sapiente id autem neque aliquid rerum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore suscipit architecto voluptatem consectetur animi deleniti voluptatum tenetur, dolore omnis, quo neque minima aliquid nihil harum ab nulla fugiat, est non. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda nobis tenetur, dolorum eum atque fuga ea repudiandae sint natus asperiores ad dolores ipsa rerum quod consequatur. Eaque a optio debitis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quaerat dignissimos ipsa soluta atque laudantium aliquid perferendis minima quo nisi voluptatibus veritatis velit illum voluptas, minus non exercitationem esse aut? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quos rem quae, adipisci magnam laudantium eveniet unde, expedita ipsa exercitationem vero commodi fugit aliquid ullam laborum dicta eligendi totam. Sint? Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ipsum reprehenderit commodi? Facere mollitia dolor corporis perspiciatis sequi temporibus necessitatibus, voluptas doloribus quaerat, fuga at tempora aspernatur animi nemo dolorem?</p>
+        </div>
+    </section>
+    <script type="text/javascript">
+        var side1 = document.getElementById("side1");
+        window.addEventListener("scroll", function(){
+            side1.style.left = -window.pageYOffset + "px";
+        })
+        var side2 = document.getElementById("side2");
+        window.addEventListener("scroll", function(){
+            side2.style.left = window.pageYOffset + "px";
+        })
+    </script>
+</body>
+</html>
