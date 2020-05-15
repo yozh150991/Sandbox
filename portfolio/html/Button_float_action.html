@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Action Button</title>
+    <link rel="stylesheet" type="text/css" href="/portfolio/css/Button_float_action.css">
+    <style type="text/css"> 
+        .Nav {
+            position: absolute; 
+            display: flex;
+            left: 0px;
+            font-size: 120%; 
+            font-family: Verdana, Arial, Helvetica, sans-serif; 
+            background: #fff;
+            padding: 20px 20px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p>
+            <a href="/portfolio/index.html" class="Nav">Назад</a>
+        </p>
+    </section>
+    <section class="Main">
+        <div class="action" onclick="actionToggle();">
+            <span>+</span>
+            <ul>
+                <li><img src="/portfolio/add/Button_float_action_1.png" alt=""> Share on Facebook</li>
+                <li><img src="/portfolio/add/Button_float_action_2.png" alt=""> Share on Twitter</li>
+                <li><img src="/portfolio/add/Button_float_action_3.png" alt=""> Share on Instagram</li>
+                <li><img src="/portfolio/add/Button_float_action_4.png" alt=""> Share on Pinterest</li>
+                <li><img src="/portfolio/add/Button_float_action_5.png" alt=""> Share on LinkedIn</li>
+            </ul>
+        </div>
+    </section>
+    <script type="text/javascript">
+        function actionToggle(){
+            var action = document.querySelector('.action');
+            action.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
