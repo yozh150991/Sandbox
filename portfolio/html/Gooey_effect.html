@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gooey Effect</title>
+    <link rel="stylesheet" type="text/css" href="/portfolio/css/Gooey_effect.css">
+    <style type="text/css"> 
+        .Nav {
+            position: absolute; 
+            display: flex;
+            left: 0px;
+            font-size: 120%; 
+            font-family: Verdana, Arial, Helvetica, sans-serif; 
+            background: #fff;
+            padding: 20px 20px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p>
+            <a href="/portfolio/index.html" class="Nav">Назад</a>
+        </p>
+    </section>
+    <section class="Main">
+        <div class="container">
+            <div class="circle circle1"></div>
+            <div class="circle circle2"></div>
+        </div>
+        <svg>
+            <filter id="gooey">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+                <feColorMatrix values="
+                1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 20 -10
+                "/>
+            </filter>
+        </svg>
+    </section>
+</body>
+</html>
