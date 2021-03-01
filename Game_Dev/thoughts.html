@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Game_Dev/css/style.css">
+</head>
+<body>
+    <div class="start">
+        <button class="button" id="button">Start The Game</button>
+    </div>
+    <canvas class="canvas" id="canvas" width="1000" height="700"></canvas>
+    <div style="display:none;">
+        <img id="back" src="../Game_Dev/images/backside.jpg" width="200" height="300">
+        <img id="card_1" src="../Game_Dev/images/EMIYA_Archer_3.png" width="200" height="300">
+        <img id="card_2" src="../Game_Dev/images/EMIYA_Assassin_3.png" width="200" height="300">
+        <img id="card_3" src="../Game_Dev/images/Eric_1.png" width="200" height="300">
+        <img id="card_4" src="../Game_Dev/images/George_4.png" width="200" height="300">
+        <img id="card_5" src="../Game_Dev/images/Hassan_King_1.png" width="200" height="300">
+        <img id="card_6" src="../Game_Dev/images/Heracles_4.png" width="200" height="300">
+        <img id="card_7" src="../Game_Dev/images/Kojiro_AF.png" width="200" height="300">
+        <img id="card_8" src="../Game_Dev/images/Leonidas_4.png" width="200" height="300">
+    </div>
+    <script type="text/javascript">
+        let button = document.getElementById('button');
+        button.onclick = function(){
+            document.getElementById('canvas').classList.toggle('active');
+            button.hidden = true;
+        };
+    </script>
+    <script src="../Game_Dev/js/play_game.js"></script>
+</body>
+</html>
