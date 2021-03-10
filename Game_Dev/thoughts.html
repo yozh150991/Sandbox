@@ -11,7 +11,9 @@
     <div class="start">
         <button class="button" id="button">Start The Game</button>
     </div>
-    <canvas class="canvas" id="canvas" width="1000" height="700"></canvas>
+    <div class="canvas_cont">
+        <canvas class="canvas" id="canvas" width="490" height="725"></canvas>
+    </div>
     <div style="display:none;">
         <img class="back" id="back" src="../Game_Dev/images/backside.jpg" width="200" height="300">
         <img class="front" id="card_1" src="../Game_Dev/images/EMIYA_Archer_3.png" width="200" height="300">
@@ -23,13 +25,6 @@
         <img class="front" id="card_7" src="../Game_Dev/images/Kojiro_AF.png" width="200" height="300">
         <img class="front" id="card_8" src="../Game_Dev/images/Leonidas_4.png" width="200" height="300">
     </div>
-    <script type="text/javascript">
-        let button = document.getElementById('button');
-        button.onclick = function(){
-            document.getElementById('canvas').classList.toggle('active');
-            button.hidden = true;
-        };
-    </script>
     <script src="../Game_Dev/js/play_game.js"></script>
 </body>
 </html>

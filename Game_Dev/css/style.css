@@ -24,7 +24,12 @@ body {
     visibility: visible;
     opacity: 1;
 }
+.canvas_cont{
+    display: flex;
+    justify-content: center;
+}
 .canvas{
+    margin: auto 16px;
     border: 5px solid black;
     visibility: hidden;
     opacity: 0;
