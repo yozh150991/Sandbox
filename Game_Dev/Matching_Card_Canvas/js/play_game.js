@@ -116,7 +116,7 @@ function compareSelect(){
     else {
         ArrSelected = [];
         indexSelected.forEach(function (elem){
-            setTimeout(resetCard(elem), 10000000);
+            resetCard(elem);
         });
         indexSelected = [];
         console.log('false');
@@ -210,8 +210,10 @@ function playGame(){
             indexSelected.push(15);
         }
         if (ArrSelected.length == 2){
-            compareSelect();
-        }
+            setTimeout(() => {
+                compareSelect()
+            }, 500);
+            }
     }, false);
 }
 playGame();
