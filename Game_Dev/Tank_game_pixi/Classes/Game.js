@@ -1,21 +1,7 @@
-class Game {
-    constructor(state){
-        this.transitionTo(state);
-    };
-    transitionTo(state){
-        this.state = state;
-        this.state.setGame(this);
-    }
-    changestate(){
-        this.state.change();
-    }
-}
-
 class State {
-    setGame(){
-        this.game = game;
-    }
-    change();
+    constructor(state){
+        this.state = state;
+    };
 }
 
 class Loading extends State{
@@ -26,10 +12,9 @@ class Loading extends State{
         return "Loading";
     }
     setup(){
-        //Pixi loader here
-    }
-    change(){
-        this.game.transitionTo(new Menu());
+        /*Pixi loader here
+        
+        */
     }
 }
 
@@ -43,9 +28,6 @@ class Menu extends State{
     setup(){
         //Pixi loader here
     }
-    change(){
-        this.game.transitionTo(new GameScreen());
-    }
 }
 
 class EndGame extends State{
@@ -58,9 +40,6 @@ class EndGame extends State{
     setup(){
         //Pixi loader here
     }
-    change(){
-        this.game.transitionTo(new Menu());
-    }
 }
 
 class GameScreen extends State{
@@ -68,15 +47,32 @@ class GameScreen extends State{
         super();
     }
     sign(){
-        return "Gamescreen";
+        return "GameScreen";
     }
     setup(){
         //Pixi loader here
     }
-    change(){
-        this.game.transitionTo(new EndGame());
+}
+
+class Game{
+    constructor(){
+        this.states = [
+            new Loading(),
+            new Menu(),
+            new GameScreen(),
+            new EndGame()
+        ]
+        this.current = this.states[0]
+    }
+    sign(){
+        return this.current.sign();
+    }
+    change(index){
+        this.previous = this.current;
+        //this.previous.container.visible = false;
+        this.current = this.states[index];
     }
 }
 
-let game = new Game(Loading);
+let game = new Game();
 console.log(game.sign());
