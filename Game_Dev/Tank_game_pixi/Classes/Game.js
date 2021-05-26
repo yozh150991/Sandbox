@@ -1,3 +1,15 @@
+let Application = PIXI.Application,
+    Container = PIXI.Container,
+    resources = PIXI.loader.resources,
+    Graphics = PIXI.Graphics,
+    TextureCache = PIXI.utils.TextureCache,
+    Sprite = PIXI.Sprite,
+    Text = PIXI.Text,
+    TextStyle = PIXI.TextStyle;
+
+let app = new Application({width: 1024, height: 768});
+document.body.appendChild(app.view);
+
 class State {
     constructor(state){
         this.state = state;
@@ -11,9 +23,12 @@ class Loading extends State{
     sign(){
         return "Loading";
     }
-    setup(){
+    draw(){
         /*Pixi loader here
-        
+        this.view = new Container();
+        app.stage.addChild(this.view);
+        проверка отрисована сцена или нет
+        лоадинг бар маленький лучше сохранить как локальную переменную диз чтото там с отсылкой на контейнер 
         */
     }
 }
@@ -25,8 +40,11 @@ class Menu extends State{
     sign(){
         return "Menu";
     }
-    setup(){
-        //Pixi loader here
+    draw(){
+        /*Pixi loader here
+        container = new Container();
+        app.stage.addChild(container);
+        */
     }
 }
 
@@ -37,8 +55,11 @@ class EndGame extends State{
     sign(){
         return "EndGame";
     }
-    setup(){
-        //Pixi loader here
+    draw(){
+       /*Pixi loader here
+        container = new Container();
+        app.stage.addChild(container);
+        */
     }
 }
 
@@ -49,8 +70,11 @@ class GameScreen extends State{
     sign(){
         return "GameScreen";
     }
-    setup(){
-        //Pixi loader here
+    draw(){
+        /*Pixi loader here
+        container = new Container();
+        app.stage.addChild(container);
+        */
     }
 }
 
