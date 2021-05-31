@@ -35,7 +35,7 @@ class Loading extends State{
 
         function setup() {
             if (this.view.visible){
-                break
+                return
             }
             else {
                 this.setLoaderBar();
@@ -72,8 +72,8 @@ class Loading extends State{
                 .on("progress", progressBar)
                 .load(change);
 
-                function progressBar(){
-                    
+                function progressBar(loader){
+                    loader.width = loaderBar.width*(loader.progress/100);
                 }
             }
         }
@@ -87,7 +87,6 @@ class Loading extends State{
             this.loaderBar.anchor.setTo(0.5);
             this.view.addChild(this.loaderBg);
             this.view.addChild(this.loaderBar);
-            return loaderBar = this.loaderBar;
         }
         /*проверка отрисована сцена или нет
         лоадинг бар маленький лучше сохранить как локальную переменную диз чтото там с отсылкой на контейнер 
