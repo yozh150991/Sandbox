@@ -70,7 +70,7 @@ class Loading extends State{
                 .add('shot_sound',  "assets/sounds/shot.wav")
                 .add('win_sound',  "assets/sounds/win.wav")
                 .on("progress", progressBar)
-                .load(change);
+                .load(game.change(1));
 
                 function progressBar(loader){
                     loader.width = loaderBar.width*(loader.progress/100);
@@ -141,13 +141,19 @@ class GameScreen extends State{
 
 class Game{
     constructor(){
+        if (Game.exists){
+            return Game.instance;
+        }
+        Game.instance = this;
+        Game.exists = true;
         this.states = [
             new Loading(),
             new Menu(),
             new GameScreen(),
             new EndGame()
         ]
-        this.current = this.states[0]
+        this.current = this.states[0];
+        return this;
     }
     sign(){
         return this.current.sign();
