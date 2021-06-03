@@ -11,18 +11,19 @@ let app = new Application({width: 1024, height: 768});
 document.body.appendChild(app.view);
 
 class State {
-    constructor(state){
-        this.state = state;
-        console.log(this.state)
-    };
+    constructor(name, nextState){
+        this.name = name;
+        console.log(this.name);
+        this.nextState = nextState;
+    }
+    next() {
+      return new this.nextState();
+    }
 }
 
 class Loading extends State{
     constructor(){
-        super();
-    }
-    sign(){
-        return "Loading";
+        super('loading', Menu);
     }
     draw(){
         this.view = new Container();
@@ -74,7 +75,7 @@ class Loading extends State{
                 .add('win_sound',  "assets/sounds/win.wav")
                 .on("progress", progressBar)
                 .load(
-                    ()=>{game.change(1)}
+                    ()=>{game.nextState}
                 );
 
                 function progressBar(loader){
@@ -98,10 +99,7 @@ class Loading extends State{
 
 class Menu extends State{
     constructor(){
-        super();
-    }
-    sign(){
-        return "Menu";
+        super('Menu', EndGame);
     }
     draw(){
         /*Pixi loader here
@@ -113,10 +111,7 @@ class Menu extends State{
 
 class EndGame extends State{
     constructor(){
-        super();
-    }
-    sign(){
-        return "EndGame";
+        super('endGame', EndGame);
     }
     draw(){
        /*Pixi loader here
@@ -129,9 +124,6 @@ class EndGame extends State{
 class GameScreen extends State{
     constructor(){
         super();
-    }
-    sign(){
-        return "GameScreen";
     }
     draw(){
         /*Pixi loader here
@@ -148,24 +140,12 @@ class Game{
         }
         Game.instance = this;
         Game.exists = true;
-        this.states = [
-            new Loading('loading'),
-            new Menu('menu'),
-            new GameScreen('gs'),
-            new EndGame('endgame')
-        ]
-        this.current = this.states[0];
-        this.current.draw();
-        return this;
+        this.state = new Loading();
+        this.state.draw();
     }
-    sign(){
-        return this.current.sign();
-    }
-    change(index){
-        this.previous = this.current;
-        //this.previous.view.visible = false; вынести в главный клас
-        this.current = this.states[index];
-    }
+      nextState() {
+        this.state = this.state.next();
+      };
 }
 
 let game = new Game();
