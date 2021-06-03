@@ -25,14 +25,16 @@ class Loading extends State{
         return "Loading";
     }
     draw(){
+        this.view = new Container();
+        app.stage.addChild(this.view);
+
         PIXI.loader
         .add('loader-bg',  "../assets/loader_bar/loader-bg.png")
         .add('loader-bar',  "assets/loader_bar/loader-bar.png")
         .load(setup);
 
-        this.view = new Container();
-        app.stage.addChild(this.view);
-        i
+        this.view.visible = true;
+
 
         function setup() {
             if (this.view.visible){
@@ -153,6 +155,7 @@ class Game{
             new EndGame('endgame')
         ]
         this.current = this.states[0];
+        this.current.draw();
         return this;
     }
     sign(){
