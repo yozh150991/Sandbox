@@ -30,9 +30,9 @@ class Loading extends State{
         app.stage.addChild(this.view);
 
         PIXI.loader
-        .add('loader-bg',  "../assets/loader_bar/loader-bg.png")
-        .add('loader-bar',  "assets/loader_bar/loader-bar.png")
-        .load(setup);
+        .add("assets/loader_bar/loader-bg.png")
+        .add("assets/loader_bar/loader-bar.png")
+        .load(setup.bind(this));
 
         this.view.visible = true;
 
