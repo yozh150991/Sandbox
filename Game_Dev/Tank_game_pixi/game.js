@@ -35,7 +35,7 @@ class Init extends State{
         .add("assets/loader_bar/loader-bar.png")
         .load(setup.bind(this));
 
-        this.view.visible = true;
+        this.view.visible = false;
 
 
         function setup() {
@@ -43,7 +43,8 @@ class Init extends State{
                 return
             }
             else {
-                this.setLoaderBar();
+                setLoaderBar();
+                this.view.visible = true;
                 ()=>{game.nextState};
             }
         }
