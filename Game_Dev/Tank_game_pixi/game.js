@@ -17,7 +17,7 @@ class State {
         this.nextState = nextState;
     }
     next() {
-      return new this.nextState();
+        return new this.nextState();
     }
 }
 
@@ -50,11 +50,12 @@ class Init extends State{
 
     setLoaderBar(){
         this.loaderBg = new Sprite(PIXI.loader.resources["assets/loader_bar/loader-bg.png"].texture);
-        this.loaderBg.position.set(50, 50);
         this.loaderBg.anchor.set(0.5);
+        this.loaderBg.position.set(app.view.width/2, app.view.height-100);
         this.loaderBar = new Sprite(PIXI.loader.resources["assets/loader_bar/loader-bar.png"].texture);
-        this.loaderBar.position.set(100, 100);
         this.loaderBar.anchor.set(0.5);
+        this.loaderBar.position.set(this.loaderBg.position.x, this.loaderBg.position.y);
+        this.loaderBar.width = this.loaderBar.width * 0.01;
         this.view.addChild(this.loaderBg);
         this.view.addChild(this.loaderBar);
     }
@@ -97,23 +98,24 @@ class Loading extends State{
                 .add("assets/sounds/lose.wav")
                 .add("assets/sounds/shot.wav")
                 .add("assets/sounds/win.wav")
-                .on("progress", progressBar)
-                .load(setup.bind(this));
+                .on("progress", this.progressBar(loader))
+                .load(this.setup.bind(this));
 
-                function progressBar(loader){
-                    loader.width = loaderBar.width*(loader.progress/100);
-                }
+                this.view.visible = false;
+    }
+    progressBar(loader){
+        console.log(loader111);
+        this.loaderBar.width = this.loaderBar.width*(loader.progress/100);
+    }
 
-        this.view.visible = true;
-
-
-        function setup() {
-            if (this.view.visible){
-                return
-            }
-            else {
-                ()=>{game.nextState}
-            }
+    setup() {
+        if (this.view.visible){
+            return
+        }
+        else {
+            this.setLoaderBar();
+            this.view.visible = true;
+            game.nextState();
         }
     }
 }
