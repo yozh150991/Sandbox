@@ -5,7 +5,10 @@ let Application = PIXI.Application,
     TextureCache = PIXI.utils.TextureCache,
     Sprite = PIXI.Sprite,
     Text = PIXI.Text,
+    loader = PIXI.loader,
+    
     TextStyle = PIXI.TextStyle;
+
 
 let app = new Application({width: 1024, height: 768});
 document.body.appendChild(app.view);
@@ -55,7 +58,8 @@ class Init extends State{
         this.loaderBar = new Sprite(PIXI.loader.resources["assets/loader_bar/loader-bar.png"].texture);
         this.loaderBar.anchor.set(0.5);
         this.loaderBar.position.set(this.loaderBg.position.x, this.loaderBg.position.y);
-        this.loaderBar.width = this.loaderBar.width * 0.01;
+        this.loaderBar.width = this.loaderBar.width * 0.000001;
+        this.loaderBar.name = 'vasya';
         this.view.addChild(this.loaderBg);
         this.view.addChild(this.loaderBar);
     }
@@ -67,6 +71,7 @@ class Loading extends State{
     draw(){
         this.view = new Container();
         app.stage.addChild(this.view);
+        
 
         PIXI.loader
                 .add("assets/board/eagle.png")
@@ -98,13 +103,13 @@ class Loading extends State{
                 .add("assets/sounds/lose.wav")
                 .add("assets/sounds/shot.wav")
                 .add("assets/sounds/win.wav")
-                .on("progress", this.progressBar(loader))
+                .on("progress", this.progressBar.bind(this))
                 .load(this.setup.bind(this));
 
                 this.view.visible = false;
     }
-    progressBar(loader){
-        console.log(loader111);
+    progressBar(){
+        console.log(this.loaderBar);
         this.loaderBar.width = this.loaderBar.width*(loader.progress/100);
     }
 
@@ -113,7 +118,6 @@ class Loading extends State{
             return
         }
         else {
-            this.setLoaderBar();
             this.view.visible = true;
             game.nextState();
         }
@@ -215,6 +219,7 @@ class Game{
     }
       nextState() {
         this.state = this.state.next();
+        this.state.draw();
       };
 }
 
