@@ -35,7 +35,7 @@ class Init extends State{
 
         PIXI.loader
         .add("assets/loader_bar/loader-bg.png")
-        .add("assets/loader_bar/loader-bar.png")
+        .add("loadbar", "assets/loader_bar/loader-bar.png")
         .load(this.setup.bind(this));
 
         this.view.visible = false;
@@ -55,11 +55,11 @@ class Init extends State{
         this.loaderBg = new Sprite(PIXI.loader.resources["assets/loader_bar/loader-bg.png"].texture);
         this.loaderBg.anchor.set(0.5);
         this.loaderBg.position.set(app.view.width/2, app.view.height-100);
-        this.loaderBar = new Sprite(PIXI.loader.resources["assets/loader_bar/loader-bar.png"].texture);
+        this.loaderBar = new Sprite(PIXI.loader.resources["loadbar"].texture);
         this.loaderBar.anchor.set(0.5);
         this.loaderBar.position.set(this.loaderBg.position.x, this.loaderBg.position.y);
         this.loaderBar.width = this.loaderBar.width * 0.000001;
-        this.loaderBar.name = 'vasya';
+
         this.view.addChild(this.loaderBg);
         this.view.addChild(this.loaderBar);
     }
@@ -103,13 +103,13 @@ class Loading extends State{
                 .add("assets/sounds/lose.wav")
                 .add("assets/sounds/shot.wav")
                 .add("assets/sounds/win.wav")
-                .on("progress", this.progressBar.bind(this))
+                .on("progress", this.progressBar)
                 .load(this.setup.bind(this));
 
                 this.view.visible = false;
     }
     progressBar(){
-        console.log(this.loaderBar);
+        console.log('this.loaderBar');
         this.loaderBar.width = this.loaderBar.width*(loader.progress/100);
     }
 
