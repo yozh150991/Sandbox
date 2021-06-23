@@ -63,6 +63,7 @@ class Init extends State{
 
         this.view.addChild(this.loaderBg);
         this.view.addChild(this.loaderBar);
+        return this.loaderBar;
     }
 }
 class Loading extends State{
@@ -105,12 +106,12 @@ class Loading extends State{
                 .add("assets/sounds/shot.wav")
                 .add("assets/sounds/win.wav")
                 .onProgress.add(() => this.progressBar())
-                //.load(this.setup.bind(this));
+                //.onComplete(this.setup.bind(this));
                 this.view.visible = false;
 
     }
     progressBar(){
-        console.log(loaderBar);
+        console.log(PIXI.loader.resources["loadbar"].texture);
         this.loaderBar.width = this.loaderBar.width*(loader.progress/100);
     }
 
