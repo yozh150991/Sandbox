@@ -15,6 +15,7 @@ document.body.appendChild(app.view);
 
 class State {
     constructor(name, nextState){
+        let ldBar;
         this.name = name;
         console.log(this.name);
         this.nextState = nextState;
@@ -58,7 +59,7 @@ class Init extends State{
         this.loaderBar = new Sprite(PIXI.loader.resources["loadbar"].texture);
         this.loaderBar.anchor.set(0.5);
         this.loaderBar.position.set(this.loaderBg.position.x, this.loaderBg.position.y);
-        this.loaderBar.width = this.loaderBar.width * 0.000001;
+        this.loaderBar.visible = false;
 
         this.view.addChild(this.loaderBg);
         this.view.addChild(this.loaderBar);
@@ -103,13 +104,13 @@ class Loading extends State{
                 .add("assets/sounds/lose.wav")
                 .add("assets/sounds/shot.wav")
                 .add("assets/sounds/win.wav")
-                .on("progress", this.progressBar)
-                .load(this.setup.bind(this));
-
+                .onProgress.add(() => this.progressBar())
+                //.load(this.setup.bind(this));
                 this.view.visible = false;
+
     }
     progressBar(){
-        console.log('this.loaderBar');
+        console.log(loaderBar);
         this.loaderBar.width = this.loaderBar.width*(loader.progress/100);
     }
 
