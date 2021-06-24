@@ -32,6 +32,7 @@ class Init extends State{
     }
     draw(){
         this.view = new Container();
+        this.view.name = 'init';
         app.stage.addChild(this.view);
 
         PIXI.loader
@@ -59,6 +60,7 @@ class Init extends State{
         this.loaderBar = new Sprite(PIXI.loader.resources["loadbar"].texture);
         this.loaderBar.anchor.set(0.5);
         this.loaderBar.position.set(this.loaderBg.position.x, this.loaderBg.position.y);
+        this.loaderBar.name = 'ldbar';
         this.loaderBar.visible = false;
 
         this.view.addChild(this.loaderBg);
@@ -72,6 +74,7 @@ class Loading extends State{
     }
     draw(){
         this.view = new Container();
+        this.view.name = 'load';
         app.stage.addChild(this.view);
         
 
@@ -106,13 +109,14 @@ class Loading extends State{
                 .add("assets/sounds/shot.wav")
                 .add("assets/sounds/win.wav")
                 .onProgress.add(() => this.progressBar())
-                //.onComplete(this.setup.bind(this));
+                .load(this.setup.bind(this));
                 this.view.visible = false;
 
     }
     progressBar(){
-        console.log(PIXI.loader.resources["loadbar"].texture);
-        this.loaderBar.width = this.loaderBar.width*(loader.progress/100);
+        console.log(app.stage.getChildByName('init').getChildByName('ldbar'));
+        app.stage.getChildByName('init').getChildByName('ldbar').width = app.stage.getChildByName('init').getChildByName('ldbar').width*(loader.progress/100);
+        app.stage.getChildByName('init').getChildByName('ldbar').visible = true;
     }
 
     setup() {
