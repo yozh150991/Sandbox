@@ -5,9 +5,39 @@ let Application = PIXI.Application,
     TextureCache = PIXI.utils.TextureCache,
     Sprite = PIXI.Sprite,
     Text = PIXI.Text,
-    loader = PIXI.loader,
-    
+    loader = new PIXI.Loader(),
     TextStyle = PIXI.TextStyle;
+
+const loadingArray = ["assets/board/eagle.png",
+                    "assets/board/leaves.png",
+                    "assets/board/small_wall_1.png",
+                    "assets/board/small_wall_2.png",
+                    "assets/board/small_wall_3.png",
+                    "assets/board/small_wall_4.png",
+                    "assets/board/wall.png",
+                    "assets/board/water.png",
+                    "assets/tanks/enemy_blue.png",
+                    "assets/tanks/enemy_red.png",
+                    "assets/tanks/enemy_white.png",
+                    "assets/tanks/tank.png",
+                    "assets/bonus/bonus_immortal.png",
+                    "assets/bonus/bonus_live.png",
+                    "assets/bonus/bonus_slow.png",
+                    "assets/bonus/bonus_speed.png",
+                    "assets/appear.png",
+                    "assets/bullet.png",
+                    "assets/button.png",
+                    "assets/enemy_bullet.png",
+                    "assets/explode_small.png",
+                    "assets/explode.png",
+                    "assets/scores.png",
+                    "assets/sounds/bonus.wav",
+                    "assets/sounds/explode.wav",
+                    "assets/sounds/hit.wav",
+                    "assets/sounds/lose.wav",
+                    "assets/sounds/shot.wav",
+                    "assets/sounds/win.wav"];
+let i = 1;
 
 
 let app = new Application({width: 1024, height: 768});
@@ -35,7 +65,7 @@ class Init extends State{
         this.view.name = 'init';
         app.stage.addChild(this.view);
 
-        PIXI.loader
+        loader
         .add("assets/loader_bar/loader-bg.png")
         .add("loadbar", "assets/loader_bar/loader-bar.png")
         .load(this.setup.bind(this));
@@ -54,14 +84,15 @@ class Init extends State{
     }
 
     setLoaderBar(){
-        this.loaderBg = new Sprite(PIXI.loader.resources["assets/loader_bar/loader-bg.png"].texture);
+        this.loaderBg = new Sprite(loader.resources["assets/loader_bar/loader-bg.png"].texture);
         this.loaderBg.anchor.set(0.5);
         this.loaderBg.position.set(app.view.width/2, app.view.height-100);
-        this.loaderBar = new Sprite(PIXI.loader.resources["loadbar"].texture);
+        this.loaderBar = new Sprite(loader.resources["loadbar"].texture);
         this.loaderBar.anchor.set(0.5);
         this.loaderBar.position.set(this.loaderBg.position.x, this.loaderBg.position.y);
         this.loaderBar.name = 'ldbar';
         this.loaderBar.visible = false;
+        console.log(this.loaderBar);
 
         this.view.addChild(this.loaderBg);
         this.view.addChild(this.loaderBar);
@@ -78,45 +109,23 @@ class Loading extends State{
         app.stage.addChild(this.view);
         
 
-        PIXI.loader
-                .add("assets/board/eagle.png")
-                .add("assets/board/leaves.png")
-                .add("assets/board/small_wall_1.png")
-                .add("assets/board/small_wall_2.png")
-                .add("assets/board/small_wall_3.png")
-                .add("assets/board/small_wall_4.png")
-                .add("assets/board/wall.png")
-                .add("assets/board/water.png")
-                .add("assets/tanks/enemy_blue.png")
-                .add("assets/tanks/enemy_red.png")
-                .add("assets/tanks/enemy_white.png")
-                .add("assets/tanks/tank.png")
-                .add("assets/bonus/bonus_immortal.png")
-                .add("assets/bonus/bonus_live.png")
-                .add("assets/bonus/bonus_slow.png")
-                .add("assets/bonus/bonus_speed.png")
-                .add("assets/appear.png")
-                .add("assets/bullet.png")
-                .add("assets/button.png")
-                .add("assets/enemy_bullet.png")
-                .add("assets/explode_small.png")
-                .add("assets/explode.png")
-                .add("assets/scores.png")
-                .add("assets/sounds/bonus.wav")
-                .add("assets/sounds/explode.wav")
-                .add("assets/sounds/hit.wav")
-                .add("assets/sounds/lose.wav")
-                .add("assets/sounds/shot.wav")
-                .add("assets/sounds/win.wav")
-                .onProgress.add(() => this.progressBar())
-                .load(this.setup.bind(this));
+        loader
+                .add(loadingArray)
+                .onLoad.add(() => this.progressBar());
+                
+        //loader.load(this.setup.bind(this));
                 this.view.visible = false;
 
     }
     progressBar(){
         console.log(app.stage.getChildByName('init').getChildByName('ldbar'));
-        app.stage.getChildByName('init').getChildByName('ldbar').width = app.stage.getChildByName('init').getChildByName('ldbar').width*(loader.progress/100);
+        app.stage.getChildByName('init').getChildByName('ldbar').width = app.stage.getChildByName('init').getChildByName('ldbar').width*(i / loadingArray.length);
         app.stage.getChildByName('init').getChildByName('ldbar').visible = true;
+        console.log(i);
+        console.log (i / loadingArray.length);
+        i++;
+        return i;
+        //каунтер с кол-вом елементов массива
     }
 
     setup() {
