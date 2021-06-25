@@ -92,7 +92,6 @@ class Init extends State{
         this.loaderBar.position.set(this.loaderBg.position.x, this.loaderBg.position.y);
         this.loaderBar.name = 'ldbar';
         this.loaderBar.visible = false;
-        console.log(this.loaderBar);
 
         this.view.addChild(this.loaderBg);
         this.view.addChild(this.loaderBar);
@@ -119,13 +118,9 @@ class Loading extends State{
     }
     progressBar(){
         console.log(app.stage.getChildByName('init').getChildByName('ldbar'));
-        app.stage.getChildByName('init').getChildByName('ldbar').width = app.stage.getChildByName('init').getChildByName('ldbar').width*(i / loadingArray.length);
-        app.stage.getChildByName('init').getChildByName('ldbar').visible = true;
-        console.log(i);
-        console.log (i / loadingArray.length);
+        app.stage.getChildByName('init').getChildByName('ldbar').scale.x = (i / loadingArray.length);
         i++;
         return i;
-        //каунтер с кол-вом елементов массива
     }
 
     setup() {
