@@ -20,6 +20,7 @@ const loadingArray = ["assets/board/eagle.png",
                     "assets/tanks/enemy_red.png",
                     "assets/tanks/enemy_white.png",
                     "assets/tanks/tank.png",
+                    "assets/screens/scr1.png",
                     "assets/bonus/bonus_immortal.png",
                     "assets/bonus/bonus_live.png",
                     "assets/bonus/bonus_slow.png",
@@ -112,13 +113,13 @@ class Loading extends State{
                 .add(loadingArray)
                 .onLoad.add(() => this.progressBar());
                 
-        //loader.load(this.setup.bind(this));
+        loader.load(this.setup.bind(this));
                 this.view.visible = false;
 
     }
     progressBar(){
-        console.log(app.stage.getChildByName('init').getChildByName('ldbar'));
         app.stage.getChildByName('init').getChildByName('ldbar').scale.x = (i / loadingArray.length);
+        app.stage.getChildByName('init').getChildByName('ldbar').visible = true;
         i++;
         return i;
     }
@@ -140,68 +141,103 @@ class Menu extends State{
     }
     draw(){
         this.view = new Container();
+        this.view.name = 'menu';
         app.stage.addChild(this.view);
+        this.view.visible = false;
+        
+        this.drawMenu();
+        this.clickButton();
+        //this.setup.bind(this);
+        
 
-        PIXI.loader
-                .add('eagle',  "assets/board/eagle.png")
-                .add('leaves',  "assets/board/leaves.png")
-                .add('wall_1',  "assets/board/small_wall_1.png")
-                .add('wall_2',  "assets/board/small_wall_2.png")
-                .add('wall_3',  "assets/board/small_wall_3.png")
-                .add('wall_4',  "assets/board/small_wall_4.png")
-                .add('wall',  "assets/board/wall.png")
-                .add('water',  "assets/board/water.png")
-                .add('enemy_blue',  "assets/tanks/enemy_blue.png")
-                .add('enemy_red',  "assets/tanks/enemy_red.png")
-                .add('enemy_white',  "assets/tanks/enemy_white.png")
-                .add('tank',  "assets/tanks/tank.png")
-                .add('bonus_immortal',  "assets/bonus/bonus_immortal.png")
-                .add('bonus_live',  "assets/bonus/bonus_live.png")
-                .add('bonus_slow',  "assets/bonus/bonus_slow.png")
-                .add('bonus_speed',  "assets/bonus/bonus_speed.png")
-                .add('appear',  "assets/appear.png")
-                .add('bullet',  "assets/bullet.png")
-                .add('button',  "assets/button.png")
-                .add('enemy_bullet',  "assets/enemy_bullet.png")
-                .add('explode_small',  "assets/explode_small.png")
-                .add('explode',  "assets/explode.png")
-                .add('scores',  "assets/scores.png")
-                .add('bonus_sound',  "assets/sounds/bonus.wav")
-                .add('explode_sound',  "assets/sounds/explode.wav")
-                .add('hit_sound',  "assets/sounds/hit.wav")
-                .add('lose_sound',  "assets/sounds/lose.wav")
-                .add('shot_sound',  "assets/sounds/shot.wav")
-                .add('win_sound',  "assets/sounds/win.wav")
-                .on("progress", progressBar)
-                .load(setup.bind(this));
-
-                function progressBar(loader){
-                    loader.width = loaderBar.width*(loader.progress/100);
-                }
-
+    }
+    drawMenu(){
+        let menuScaleX, menuScaleY;
+        this.menu = new Sprite(loader.resources["assets/screens/scr1.png"].texture);
+        this.menu.position.set(0, 0);
+        this.menu.interactive = true;
+        menuScaleX = app.view.width / loader.resources["assets/screens/scr1.png"].texture.width;
+        menuScaleY = app.view.height / loader.resources["assets/screens/scr1.png"].texture.height;
+        this.menu.height = loader.resources["assets/screens/scr1.png"].texture.height * menuScaleY;
+        this.menu.width = loader.resources["assets/screens/scr1.png"].texture.width * menuScaleX;
+        this.view.addChild(this.menu);
         this.view.visible = true;
+        app.stage.getChildByName('init').visible = false;
+    }
 
-
-        function setup() {
-            if (this.view.visible){
-                return
+    clickButton(){
+        app.view.addEventListener('click', function(event) {
+            if (event.pageX > 297 * menuScaleX && event.pageX < 594 * menuScaleX && event.pageY > 500 * menuScaleY && event.pageY < 560 * menuScaleY) {
+                console.log('hit');
+                //this.view.setup();
             }
-            else {
-                ()=>{game.nextState}
-            }
+            console.log(event.pageX, event.pageY);
         }
+        , false);
+    }
+
+    setup() {
+            game.nextState();
     }
 }
 
 class EndGame extends State{
     constructor(){
-        super('endGame', EndGame);
+        super('endGame', Menu);
     }
     draw(){
-       /*Pixi loader here
-        container = new Container();
-        app.stage.addChild(container);
-        */
+        this.view = new Container();
+        this.view.name = 'EndGame';
+        app.stage.addChild(this.view);
+        this.view.visible = false;
+        
+        this.drawScores();
+        this.clickButton();
+        //this.setup.bind(this);
+        
+
+    }
+    drawScores(){
+        let styleInfo = new TextStyle({
+            fontFamily: "Arial",
+            fontSize: 20,
+            fill: "white"
+        });
+        let stylePress = new TextStyle({
+            fontFamily: "Arial",
+            fontSize: 10,
+            fill: "white"
+        });
+
+        this.scores = new Sprite(loader.resources["assets/scores.png"].texture);
+        this.scores.anchor.set(0.5, 0);
+        this.scores.position.set(app.view.width/2, 100);
+        this.scores.interactive = true;
+        this.view.addChild(this.scores);
+        this.hitTanks = new Text('Hit tanks' + this.scores.hit, styleInfo);
+        this.hitTanks.position.set(200, app.view.height/2);
+        this.view.addChild(this.hitTanks);
+        this.press = new Text('Press anywhere to continue', stylePress);
+        this.press.anchor.set(0.5);
+        this.press.position.set(app.view.width/2, app.view.height-50);
+        this.view.addChild(this.press);
+        this.view.visible = true;
+        app.stage.getChildByName('menu').visible = false;
+    }
+
+    clickButton(){
+        app.view.addEventListener('click', function(event) {
+            if (event.pageX > 297 * menuScaleX && event.pageX < 594 * menuScaleX && event.pageY > 500 * menuScaleY && event.pageY < 560 * menuScaleY) {
+                console.log('hit');
+                //this.view.setup();
+            }
+            console.log(event.pageX, event.pageY);
+        }
+        , false);
+    }
+
+    setup() {
+            game.nextState();
     }
 }
 
