@@ -20,7 +20,6 @@ const loadingArray = ["assets/board/eagle.png",
                     "assets/tanks/enemy_red.png",
                     "assets/tanks/enemy_white.png",
                     "assets/tanks/tank.png",
-                    "assets/screens/scr1.png",
                     "assets/bonus/bonus_immortal.png",
                     "assets/bonus/bonus_live.png",
                     "assets/bonus/bonus_slow.png",
@@ -46,7 +45,6 @@ document.body.appendChild(app.view);
 
 class State {
     constructor(name, nextState){
-        let ldBar;
         this.name = name;
         console.log(this.name);
         this.nextState = nextState;
@@ -152,24 +150,31 @@ class Menu extends State{
 
     }
     drawMenu(){
-        let menuScaleX, menuScaleY;
-        this.menu = new Sprite(loader.resources["assets/screens/scr1.png"].texture);
-        this.menu.position.set(0, 0);
+        this.menu = new Sprite(loader.resources["assets/button.png"].texture);
+        this.menu.anchor.set(0.5, 0);
+        this.menu.position.set(app.view.width/2, app.view.height - 300);
         this.menu.interactive = true;
-        menuScaleX = app.view.width / loader.resources["assets/screens/scr1.png"].texture.width;
-        menuScaleY = app.view.height / loader.resources["assets/screens/scr1.png"].texture.height;
-        this.menu.height = loader.resources["assets/screens/scr1.png"].texture.height * menuScaleY;
-        this.menu.width = loader.resources["assets/screens/scr1.png"].texture.width * menuScaleX;
         this.view.addChild(this.menu);
+
+        let styleTitle = new TextStyle({
+            fontFamily: "Arial",
+            fontSize: 75,
+            fill: "white"
+        });
+        this.title = new Text('Game of Tanks', styleTitle);
+        this.title.anchor.set(0.5);
+        this.title.position.set(app.view.width/2, app.view.height/2-200);
+        this.view.addChild(this.title);
+        app.renderer.backgroundColor = 0x2C2E68;
         this.view.visible = true;
         app.stage.getChildByName('init').visible = false;
     }
 
     clickButton(){
         app.view.addEventListener('click', function(event) {
-            if (event.pageX > 297 * menuScaleX && event.pageX < 594 * menuScaleX && event.pageY > 500 * menuScaleY && event.pageY < 560 * menuScaleY) {
+            if (event.pageX > 362 && event.pageX < 660 && event.pageY > 518 && event.pageY < 578) {
                 console.log('hit');
-                //this.view.setup();
+                this.setup.bind(this);
             }
             console.log(event.pageX, event.pageY);
         }
