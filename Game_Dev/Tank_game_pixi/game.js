@@ -171,14 +171,7 @@ class Menu extends State{
     }
 
     clickButton(){
-        app.view.addEventListener('click', function(event) {
-            if (event.pageX > 362 && event.pageX < 660 && event.pageY > 518 && event.pageY < 578) {
-                console.log('hit');
-                this.setup.bind(this);
-            }
-            console.log(event.pageX, event.pageY);
-        }
-        , false);
+        this.menu.on('click', this.setup.bind(this), false);
     }
 
     setup() {
