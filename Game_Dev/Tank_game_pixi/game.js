@@ -212,7 +212,7 @@ class EndGame extends State{
         this.scores.position.set(app.view.width/2, 100);
         this.scores.interactive = true;
         this.view.addChild(this.scores);
-        this.hitTanks = new Text('Hit tanks' + this.scores.hit, styleInfo);
+        this.hitTanks = new Text('Hit tanks'/* + this.scores.hit*/, styleInfo);
         this.hitTanks.position.set(200, app.view.height/2);
         this.view.addChild(this.hitTanks);
         this.press = new Text('Press anywhere to continue', stylePress);
@@ -224,14 +224,7 @@ class EndGame extends State{
     }
 
     clickButton(){
-        app.view.addEventListener('click', function(event) {
-            if (event.pageX > 297 * menuScaleX && event.pageX < 594 * menuScaleX && event.pageY > 500 * menuScaleY && event.pageY < 560 * menuScaleY) {
-                console.log('hit');
-                //this.view.setup();
-            }
-            console.log(event.pageX, event.pageY);
-        }
-        , false);
+        this.view.on('click', fthis.view.setup(), false);
     }
 
     setup() {
