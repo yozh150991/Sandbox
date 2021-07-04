@@ -1,5 +1,4 @@
-export
-let Application = PIXI.Application,
+export let Application = PIXI.Application,
     Container = PIXI.Container,
     resources = PIXI.loader.resources,
     Graphics = PIXI.Graphics,
@@ -14,4 +13,4 @@ let Application = PIXI.Application,
         height: 820
     },
 
-    Cell
+    cellSize = 40;

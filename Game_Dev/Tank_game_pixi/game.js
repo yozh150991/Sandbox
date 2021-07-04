@@ -224,7 +224,7 @@ class EndGame extends State{
     }
 
     clickButton(){
-        this.view.on('click', fthis.view.setup(), false);
+        this.view.on('click', this.view.setup(), false);
     }
 
     setup() {
