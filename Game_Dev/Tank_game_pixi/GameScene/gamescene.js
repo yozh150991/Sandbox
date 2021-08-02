@@ -1,11 +1,13 @@
 import { cellSize } from "../config/config";
 import { mapmatrix } from "../maps/map_0";
+import Tank from "../assets/players/tanks";
 
 export class Battlefield {
     constructor(){
         this.view = new Container();
         this.view.name = 'battle';
         app.stage.addChild(this.view);
+
         //this.create();
     }
     create(){
@@ -20,8 +22,8 @@ export class Battlefield {
                     this.cell.height = cellSize;
                     this.cell.width = cellSize;
                     this.view.addChild(this.cell);
-
                 }
+
                 if (cellName === '2'){
                     this.cell.ul = new Sprite(loader.resources["assets/board/small_wall_1.png"].texture);
                     this.cell.ul.height = cellSize/2;
@@ -45,7 +47,14 @@ export class Battlefield {
                     this.view.addChild(this.cell.lr)
                 }
 
-              }
+                if (cellName === '6'){
+                    this.cell = new Tank();
+                    this.cell.height = cellSize/2;
+                    this.cell.width = cellSize/2;
+                    this.cell.position.set(cellSize * j, cellSize * i)
+                    this.view.addChild(this.cell)
+                }
             }
-          }
+        }
+    }
 }
