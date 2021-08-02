@@ -1,12 +1,5 @@
-let Application = PIXI.Application,
-    Container = PIXI.Container,
-    resources = PIXI.loader.resources,
-    Graphics = PIXI.Graphics,
-    TextureCache = PIXI.utils.TextureCache,
-    Sprite = PIXI.Sprite,
-    Text = PIXI.Text,
-    loader = new PIXI.Loader(),
-    TextStyle = PIXI.TextStyle;
+import { Application, Container, resources, Graphics, TextureCache, Sprite, Text, loader, TextStyle, GameConfig} from "../config/config"; 
+import { Battlefield } from "./GameScene/gamescene";
 
 const loadingArray = ["assets/board/eagle.png",
                     "assets/board/leaves.png",
@@ -40,7 +33,7 @@ const loadingArray = ["assets/board/eagle.png",
 let i = 1;
 
 
-let app = new Application({width: 1024, height: 768});
+let app = new Application({width: GameConfig['width'], height: GameConfig['height']});
 document.body.appendChild(app.view);
 
 class State {
@@ -235,6 +228,7 @@ class EndGame extends State{
 class GameScreen extends State{
     constructor(){
         super();
+        let battle = new Battlefield()
     }
     draw(){
         /*Pixi loader here

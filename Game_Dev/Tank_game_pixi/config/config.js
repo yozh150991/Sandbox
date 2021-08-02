@@ -9,8 +9,8 @@ export let Application = PIXI.Application,
     TextStyle = PIXI.TextStyle,
 
     GameConfig = {
-        width: 1025, 
-        height: 820
+        width: 1000, 
+        height: 800
     },
 
     cellSize = 40;
