@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+}
+.container{
+    max-width: 1000px;
+    margin: 20px auto;
+}
+h1,h2{
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Impact;
+    text-align: center;
+    margin: 30px 0;
+}
+h1{
+    font-size: 32px;
+}
+p, ul{
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 150%;
+}
+img{
+    width: 80%;
+    display: block;
+    margin: 20px auto;
+}
+.img-description{
+    text-align: center;
+    padding: 20px 0px 40px;
+    font-style: italic;
+}
+.text-red{
+    color: red;
+}
+.text-bold{
+    font-weight: bold;
+}
